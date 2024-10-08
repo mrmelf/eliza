@@ -1,4 +1,4 @@
-initial: How do you do.  Please tell me your problem.
+initial: Nice to meet you. How should we start. Say  [hello world] to begin
 final: Goodbye.  Thank you for talking to me.
 quit: bye
 quit: goodbye
@@ -6,11 +6,11 @@ quit: quit
 pre: dont don't
 pre: cant can't
 pre: wont won't
-pre: recollect remember
+pre: recollect remember 
 pre: dreamt dreamed
 pre: dreams dream
 pre: maybe perhaps
-pre: how what
+pre: how how
 pre: when what
 pre: certainly yes
 pre: machine computer
@@ -25,7 +25,7 @@ post: me you
 post: myself yourself
 post: yourself myself
 post: i you
-post: you I
+post: you i
 post: my your
 post: i'm you are
 synon: belief feel think believe wish
@@ -36,12 +36,100 @@ synon: happy elated glad better
 synon: cannot can't
 synon: everyone everybody nobody noone
 synon: be am is are was
-key: xnone
+synon: beverage water tea coffee
+key: none
   decomp: *
     reasmb: I'm not sure I understand you fully.
     reasmb: Please go on.
     reasmb: What does that suggest to you ?
     reasmb: Do you feel strongly about discussing such things ?
+    reasmb: Do you feel strongly about discussing such things ?
+key: not 
+  decomp: * not ok *
+    reasmb: Sorry to hear. Let us  continue. Tell me why you are not ok.
+    reasmb: Very, very, Sorry to hear that let us continue..say [good morning]
+  decomp: *good*
+    reasmb: Very sorry to hear that lets continue..say [good morning]
+    reasmb: Very, very, Sorry to hear that let us continue..say [good morning]
+  decomp: * not married * 
+    reasmb: Do you have a long term partner [ yes] or [no] 
+key: healthy
+  decomp: * healthy *
+    reasmb: Ok. glad to  hear you are feeling healthy Say [ good evening]
+  decomp: * I am not  healthy *
+    reasmb:  Ok. Sorry to hear that Say [ good evening]
+key: morning
+  decomp: * good morning*
+    reasmb:  Ok. Say [ good afternoon]
+key: afternoon
+  decomp: * good afternoon *
+    reasmb:  Ok. Say [ good evening]
+key: document
+  decomp: *
+    reasmb:  last update October 5  2024  - added more items ..for cgatotp
+key: hungry
+  decomp: *
+    reasmb:  What would you like to eat?  [chicken] or [ meat ]
+key: chicken
+  decomp: *
+    reasmb:  What would you like to eat with your chicken  [salad] or [soup]
+key: salad
+    decomp: *
+      reasmb:  What beverage ?  [water]  [tea ] or [ coffee]
+key: meat
+  decomp: *
+    reasmb:  What would you like to eat with your meat  [salad] or [soup]
+  decomp: *
+    reasmb:  What beverage ?  [water]  [tea ] or [ coffee]
+key: soup
+  decomp: *
+    reasmb:  What would you like to drink with dinner ?  [water]  [tea ] or [coffee]
+key: tea
+  decomp: * @beverage *
+    reasmb:  Ok you will be getting (2) with your dinner. Tell me more about your self [I am married ] or [ I am not married ].
+key: coffee
+  decomp: * @beverage *
+    reasmb:  Ok you will be getting (2) with your dinner. Tell me more about your self [I am married ] or [ I am not married ]
+key: water
+  decomp: * @beverage *
+    reasmb:  Ok you will be getting (2) with your dinner. Tell me more about your self [I am married ] or [ I am not married ]
+key: evening
+  decomp: *
+    reasmb: It is dinner time. Say [ I am hungry]
+key: night
+  decomp: *
+    reasmb: It is dinner time. Say [ I am hungry]
+key: morning
+  decomp: *
+    reasmb:  Ok. Say [ good afternoon]
+key: order
+  decomp: * in order *
+    reasmb:  Glad to hear that. Say [ good morning ]
+key: ok
+  decomp: * ok *
+    reasmb:  Glad to hear that. Say [ good morning ]
+key: well
+  decomp: * well *
+    reasmb:  Ok. Say [ good morning ]
+key: fine
+  decomp: * fine *
+    reasmb:  Glad to hear..  Say [ good morning ]
+key: lesson
+  decomp: * one *
+    reasmb: Lesson one. How are you? Please answer [ I am good ] or [not good]
+  decomp:  * two *
+    reasmb: Lesson two. Ordering meals... You are hungry. What would you like to eat for breakfast  [ a bagel or [ two eggs]
+  decomp:  * three *
+    reasmb: Lesson three tell more about yourself [ I am married]  or [ I am not married ]
+key: peace
+  decomp: *
+    reasmb: Thank you for dropping by.  How are you?  [good  not good]
+key: hello
+  decomp: *
+    reasmb: Thank you for dropping by.  What is your name .. say  [my name is ...] 
+key: how
+  decomp: * how are you *
+    reasmb: thank you for asking,  now say [ I am fine]
 key: sorry
   decomp: *
     reasmb: Please don't apologise.
@@ -89,10 +177,6 @@ key: perhaps
     reasmb: Can't you be more positive ?
     reasmb: You aren't sure ?
     reasmb: Don't you know ?
-key: name 15
-  decomp: *
-    reasmb: I am not interested in names.
-    reasmb: I've told you before, I don't care about names -- please continue.
 key: deutsch
   decomp: *
     reasmb: goto xforeign
@@ -112,9 +196,9 @@ key: espanol
 key: xforeign
   decomp: *
     reasmb: I speak only English.
-key: hello
+key: xhello
   decomp: *
-    reasmb: How do you do.  Please state your problem.
+    reasmb: How do you do.  Please state your problem. Why did you come hear today
     reasmb: Hi.  What seems to be your problem ?
 key: computer 50
   decomp: *
@@ -124,14 +208,6 @@ key: computer 50
     reasmb: Don't you think computers can help people ?
     reasmb: What about machines worrys you ?
     reasmb: What do you think about machines ?
-key: am
-  decomp: * am i *
-    reasmb: Do you believe you are (2) ?
-    reasmb: Would you want to be (2) ?
-    reasmb: Do you wish I would tell you you are (2) ?
-    reasmb: What would it mean if you were (2) ?
-    reasmb: goto what
-  decomp: *
     reasmb: Why do you say 'am' ?
     reasmb: I don't understand that.
 key: are
@@ -170,7 +246,7 @@ key: was 2
     reasmb: What do you think ?
     reasmb: Perhaps I was (2) .
     reasmb: What if I had been (2) ?
-key: i
+key: i 1
   decomp: * i @desire *
     reasmb: What would it mean to you if you got (3) ?
     reasmb: Why do you want (3) ?
@@ -178,12 +254,14 @@ key: i
     reasmb: What if you never got (3) ?
     reasmb: What would getting (3) mean to you ?
     reasmb: What does wanting (3) have to do with this discussion ?
-  decomp: * i am * @sad *
+  decomp:   * hungry *
+    reasmb: What would you like to eat?  [chicken] or [ meat ]
+  decomp: * i am @sad *
     reasmb: I am sorry to hear that you are (3) .
     reasmb: Do you think that coming here will help you not to be (3) ?
     reasmb: I'm sure it's not pleasant to be (3) .
     reasmb: Can you explain what made you (3) ?
-  decomp: * i am * @happy *
+  decomp: * i am *@happy*
     reasmb: How have I helped you to be (3) ?
     reasmb: Has your treatment made you (3) ?
     reasmb: What makes you (3) just now ?
@@ -270,6 +348,8 @@ key: my 2
     reasmb: Who else in your family (4) ?
     reasmb: Your (3) ?
     reasmb: What else comes to mind when you think of your (3) ?
+decomp: * name *
+    reasmb: nice to meet you. How are you today [ok } or [not ok]
   decomp: * my *
     reasmb: Your (2) ?
     reasmb: Why do you say your (2) ?
@@ -321,7 +401,7 @@ key: why
 key: everyone 2
   decomp: * @everyone *
     reasmb: Realy, (2) ?
-    reasmb: Surely not (2) .
+    reasmb: Surely not (2) .ƒ
     reasmb: Can you think of anyone in particular ?
     reasmb: Who, for example?
     reasmb: Are you thinking of a very special person ?
@@ -329,6 +409,36 @@ key: everyone 2
     reasmb: Someone special perhaps ?
     reasmb: You have a particular person in mind, don't you ?
     reasmb: Who do you think you're talking about ?
+key: deutsch
+  decomp: *
+    reasmb: goto xforeign
+    reasmb: I told you before, I don't understand German.
+key: francais
+  decomp: *
+    reasmb: goto xforeign
+    reasmb: I told you before, I don't understand French.
+key: italiano
+  decomp: *
+    reasmb: goto xforeign
+    reasmb: I told you before, I don't understand Italian.
+key: chinese
+  decomp: *
+    reasmb: Great. Text me   [ Hello World ] in Chinese
+key: french
+  decomp: *
+    reasmb: Welcome to the Hal9000 language tutor... Text me  [french ] to continue in fencb  or select another language such as  [Italian German etc
+key: hebrew
+  decomp: *
+    reasmb: welcome to the Hal9000 language tutor... Text me  [Hello ]  in Hebrew  to continue in Hebrew or select another language such as  [French or German etc
+key: german
+  decomp: *
+    reasmb: Great. Text me  [ Hello ] in German
+key: spanish
+  decomp: *
+     reasmb: Welcome to the Hal9000 language tutor... Text me  [Hello ] in Spanish to continue in spanish  or select another language such as  [French or Hebrew or German etc ]
+key: english
+  decomp: *
+    reasmb: Great. Text me  [Hello ] in English
 key: everybody 2
   decomp: *
     reasmb: goto everyone
@@ -357,4 +467,3 @@ key: alike 10
 key: like 10
   decomp: * @be * like *
     reasmb: goto alike
-   
