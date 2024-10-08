@@ -1,4 +1,3 @@
-
 # ELIZA Gets a Facelift
 
 ## How to use Eliza to create immersive language tutorials using Wade Brainerd’s ELIZA Python program and Doctor input file
