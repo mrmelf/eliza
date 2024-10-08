@@ -3,6 +3,18 @@ import random
 import re
 from collections import namedtuple
 
+
+import logging
+import random
+import re
+
+import sys
+sys.path.append("/Users/melvynfeuerman/desktop")
+sys.path.append("/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages")
+sys.path.append("/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages")
+
+
+
 # Fix Python2/Python3 incompatibility
 try: input = raw_input
 except NameError: pass
@@ -204,7 +216,6 @@ class Eliza:
                 log.debug('Output from xnone: %s', output)
 
         return " ".join(output)
-
     def initial(self):
         return random.choice(self.initials)
 
@@ -212,12 +223,19 @@ class Eliza:
         return random.choice(self.finals)
 
     def run(self):
+        global name
         print(self.initial())
-
+      
         while True:
             sent = input('> ')
-
             output = self.respond(sent)
+            if "name" in sent :
+                words = sent.split(" " )
+                name = words[-1]
+                output = name  + " "  + output
+            else:
+                output = name  + " "  + output
+                
             if output is None:
                 break
 
@@ -227,6 +245,8 @@ class Eliza:
 
 
 def main():
+    global name
+    name = " " 
     eliza = Eliza()
     eliza.load('doctor.txt')
     eliza.run()
