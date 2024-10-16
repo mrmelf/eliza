@@ -4,8 +4,9 @@
 
 Listed below is a log of a session that shows how the Doctor input file and the ELIZA program can create a new language-learning functionality and also retain the original Rogerian therapist role.
 
-The first part of the log introduces basic conversational phrases, while the second part reverts to the familiar therapist-style interaction.
 
+The first part of the log introduces basic conversational phrases, while the second part reverts to the familiar therapist-style interaction.
+# Note the unusual use of [brackets] to guide the user.
 For the language learning part of the session, **[brackets]** are used to offer the user different options, allowing them to select responses from a guided list. This makes the learning experience more interactive and immersive.
 
 I also made a small change to the ELIZA Python program to capture the user’s name and include it in the response from ELIZA.
