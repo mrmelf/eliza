@@ -1,6 +1,6 @@
 # ELIZA Gets a Facelift
 
-## How to use Eliza to create an amazing immersive language tutorials using Wade Brainerd’s ELIZA Python program and Doctor input file
+## How to use Eliza to create an amazing immersive language tutorials using Wade Brainerd’s ELIZA Python program and Doctor input file.
 
 Listed below is a log of a session that shows how the Doctor input file and the ELIZA program can create a new language-learning functionality and also retain the original Rogerian therapist role.
 
